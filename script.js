@@ -1,13 +1,11 @@
 const CONFIG = window.RSBG_CONFIG || {};
 const SITE_URL = CONFIG.SITE_URL || window.location.origin;
 const PROXY_URL = CONFIG.HISCORES_PROXY_URL || "/proxy.php";
-const TEMPLATE_PATH = "your-template.html";
+const TEMPLATE_PATH = "signature.html";
 const BANNER_SIZES = {
   rs3: { width: 500, height: 260 },
   osrs: { width: 400, height: 270 }
 };
-const DISPLAY_MODE = "icons";
-
 const form = document.getElementById("generatorForm");
 const usernameInput = document.getElementById("username");
 const gameInputs = [...document.querySelectorAll('input[name="game"]')];
@@ -51,8 +49,7 @@ function getUsername() {
 function getBannerParams() {
   return new URLSearchParams({
     username: getUsername(),
-    game: getSelectedGame(),
-    mode: DISPLAY_MODE
+    game: getSelectedGame()
   });
 }
 
